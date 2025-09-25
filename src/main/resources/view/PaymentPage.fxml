@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
@@ -28,6 +31,15 @@
 
         <!-- Form and Image Section -->
         <HBox alignment="CENTER" maxWidth="Infinity" spacing="30" stylesheets="@../css/Payment.css">
+         <AnchorPane prefHeight="285.0" prefWidth="150.0">
+            <children>
+               <ImageView fitHeight="41.0" fitWidth="60.0" layoutX="45.0" layoutY="122.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                     <Image url="@../../../../../../../Downloads/arrow%20(1).png" />
+                  </image>
+               </ImageView>
+            </children>
+         </AnchorPane>
             <GridPane alignment="CENTER" hgap="15" style="-fx-padding: 20; -fx-background-color: #f9fafb; -fx-background-radius: 10; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 0, 2);" vgap="15">
                 <columnConstraints>
                     <ColumnConstraints percentWidth="30" />
@@ -52,7 +64,7 @@
                 </TextField>
 
                 <!-- Email -->
-                <Label text="StudentID" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                <Label text="Student" GridPane.columnIndex="0" GridPane.rowIndex="1">
                     <font><Font name="System Bold" size="14.0" /></font>
                 </Label>
                 <TextField fx:id="txtEmail" promptText="Enter Email" style="-fx-background-radius: 5;" GridPane.columnIndex="1" GridPane.rowIndex="1">
@@ -60,40 +72,36 @@
                 </TextField>
 
                 <!-- Phone -->
-                <Label text="CourseID" GridPane.columnIndex="0" GridPane.rowIndex="2">
+                <Label text="Course" GridPane.columnIndex="0" GridPane.rowIndex="2">
                     <font><Font name="System Bold" size="14.0" /></font>
                 </Label>
-                <TextField fx:id="txtPhone" promptText="Enter Phone Number" style="-fx-background-radius: 5;" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                <TextField fx:id="txtPhone" promptText="Enter Course" style="-fx-background-radius: 5;" GridPane.columnIndex="1" GridPane.rowIndex="2">
                     <tooltip><Tooltip text="Payer's phone number" /></tooltip>
                 </TextField>
 
                 <!-- Availability -->
-                <Label prefHeight="20.0" prefWidth="107.0" text="Payment Date" GridPane.columnIndex="0" GridPane.rowIndex="3">
+                <Label prefHeight="20.0" prefWidth="107.0" text="Amount" GridPane.columnIndex="0" GridPane.rowIndex="3">
                     <font><Font name="System Bold" size="14.0" /></font>
                 </Label>
-                <TextField fx:id="txtAvailability" promptText="Enter Date" style="-fx-background-radius: 5;" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                <TextField fx:id="txtAvailability" promptText="Enter Amount" style="-fx-background-radius: 5;" GridPane.columnIndex="1" GridPane.rowIndex="3">
                     <tooltip><Tooltip text="Availability details" /></tooltip>
                 </TextField>
-            <Label layoutX="30.0" layoutY="74.0" prefHeight="20.0" prefWidth="123.0" text="Payment Method" GridPane.rowIndex="5">
+            <Label layoutX="30.0" layoutY="74.0" prefHeight="20.0" prefWidth="123.0" text="Status" GridPane.rowIndex="5">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
             </Label>
-            <Label layoutX="30.0" layoutY="193.0" text="Amount" GridPane.rowIndex="4">
+            <Label layoutX="30.0" layoutY="193.0" text="Payment Date" GridPane.rowIndex="4">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
             </Label>
-            <TextField fx:id="txtAvailability1" promptText="Enter Amount" style="-fx-background-radius: 5;" GridPane.columnIndex="1" GridPane.rowIndex="4">
+            <TextField fx:id="txtAvailability11" promptText="Enter Status" style="-fx-background-radius: 5;" GridPane.columnIndex="1" GridPane.rowIndex="5">
                <tooltip>
                   <Tooltip text="Availability details" />
                </tooltip>
             </TextField>
-            <TextField fx:id="txtAvailability11" promptText="Enter PaymentMethod" style="-fx-background-radius: 5;" GridPane.columnIndex="1" GridPane.rowIndex="5">
-               <tooltip>
-                  <Tooltip text="Availability details" />
-               </tooltip>
-            </TextField>
+            <DatePicker fx:id="txtDate" prefHeight="26.0" prefWidth="286.0" promptText="Enter PaymentDate" GridPane.columnIndex="1" GridPane.rowIndex="4" />
             </GridPane>
 
             <!-- Placeholder for Image or Additional Content -->

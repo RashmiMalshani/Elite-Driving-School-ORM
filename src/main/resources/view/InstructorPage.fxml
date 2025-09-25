@@ -7,6 +7,8 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
@@ -28,7 +30,16 @@
 
         <!-- Form and Image Section -->
         <HBox alignment="CENTER" maxWidth="Infinity" spacing="30" stylesheets="@../css/Instructor.css">
-            <GridPane alignment="CENTER" hgap="15" style="-fx-padding: 20; -fx-background-color: #f9fafb; -fx-background-radius: 10; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 0, 2);" vgap="15">
+         <AnchorPane prefHeight="229.0" prefWidth="141.0">
+            <children>
+               <ImageView fx:id="Insructor" fitHeight="41.0" fitWidth="60.0" layoutX="50.0" layoutY="94.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                     <Image url="@../../../../../../../Downloads/arrow%20(1).png" />
+                  </image>
+               </ImageView>
+            </children>
+         </AnchorPane>
+            <GridPane alignment="CENTER" hgap="15" prefHeight="270.0" prefWidth="365.0" style="-fx-padding: 20; -fx-background-color: #f9fafb; -fx-background-radius: 10; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 0, 2);" vgap="15">
                 <columnConstraints>
                     <ColumnConstraints percentWidth="30" />
                     <ColumnConstraints percentWidth="70" />
@@ -39,6 +50,7 @@
                     <RowConstraints vgrow="SOMETIMES" />
                     <RowConstraints vgrow="SOMETIMES" />
                     <RowConstraints vgrow="SOMETIMES" />
+               <RowConstraints vgrow="SOMETIMES" />
                 </rowConstraints>
 
                 <!-- Instructor ID -->
@@ -74,12 +86,22 @@
                 </TextField>
 
                 <!-- Availability -->
-                <Label text="Availability:" GridPane.columnIndex="0" GridPane.rowIndex="4">
+                <Label text="Courses" GridPane.columnIndex="0" GridPane.rowIndex="4">
                     <font><Font name="System Bold" size="14.0" /></font>
                 </Label>
-                <TextField fx:id="txtAvailability" promptText="Enter Availability" style="-fx-background-radius: 5;" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                <TextField fx:id="txtAvailability" promptText="Enter Courses" style="-fx-background-radius: 5;" GridPane.columnIndex="1" GridPane.rowIndex="4">
                     <tooltip><Tooltip text="Instructor's availability details" /></tooltip>
                 </TextField>
+            <Label text="Lessons" GridPane.rowIndex="5">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtAvailability1" promptText="Enter Lessons" style="-fx-background-radius: 5;" GridPane.columnIndex="1" GridPane.rowIndex="5">
+               <tooltip>
+                  <Tooltip text="Instructor's availability details" />
+               </tooltip>
+            </TextField>
             </GridPane>
 
             <!-- Placeholder for Image or Additional Content -->
@@ -109,7 +131,7 @@
         </HBox>
 
         <!-- Instructor Table -->
-        <TableView fx:id="tblInstructor" onMouseClicked="#tableClickOnAction" style="-fx-background-color: #ffffff; -fx-border-color: #e5e7eb; -fx-border-radius: 8; -fx-table-cell-border-color: transparent;" VBox.vgrow="ALWAYS">
+        <TableView fx:id="imginstructor" onMouseClicked="#tableClickOnAction" style="-fx-background-color: #ffffff; -fx-border-color: #e5e7eb; -fx-border-radius: 8; -fx-table-cell-border-color: transparent;" VBox.vgrow="ALWAYS">
             <columns>
                 <TableColumn fx:id="colInstructorId" minWidth="100" prefWidth="100" text="Instructor ID" />
                 <TableColumn fx:id="colName" minWidth="140" prefWidth="140" text="Name" />

@@ -2,6 +2,7 @@ package lk.ijse.elite_driving_school_orm.controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TableColumn;
@@ -9,7 +10,10 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 
-public class UserPageController {
+import java.net.URL;
+import java.util.ResourceBundle;
+
+public class UserPageController implements Initializable {
 
     @FXML
     private ComboBox<?> cmbRole;
@@ -61,6 +65,11 @@ public class UserPageController {
     @FXML
     void tableClickOnAction(MouseEvent event) {
 
+    }
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        loadAllUsers();
     }
 
 }

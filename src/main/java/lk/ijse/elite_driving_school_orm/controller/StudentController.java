@@ -1,17 +1,14 @@
 package lk.ijse.elite_driving_school_orm.controller;
 
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
-import lk.ijse.elite_driving_school_orm.bo.custom.BOFactory;
+import lk.ijse.elite_driving_school_orm.bo.BOFactory;
 import lk.ijse.elite_driving_school_orm.bo.custom.StudentBO;
 import lk.ijse.elite_driving_school_orm.dto.StudentDTO;
 
-import java.util.ArrayList;
 import java.util.Optional;
 
 public class StudentController {

@@ -8,6 +8,8 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
@@ -29,10 +31,20 @@
 
         <!-- Form and Image Section -->
         <HBox alignment="CENTER" maxWidth="Infinity" spacing="30" stylesheets="@../css/Student.css">
-            <GridPane alignment="CENTER" hgap="15" style="-fx-padding: 20; -fx-background-color: #f9fafb; -fx-background-radius: 10; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 0, 2);" vgap="15">
+         <AnchorPane prefHeight="325.0" prefWidth="142.0">
+            <children>
+               <ImageView fx:id="imgStudent" fitHeight="41.0" fitWidth="60.0" layoutX="50.0" layoutY="150.0" onMouseClicked="#imgStudentOnAction" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                     <Image url="@../../../../../../../Downloads/arrow%20(1).png" />
+                  </image>
+               </ImageView>
+            </children>
+         </AnchorPane>
+            <GridPane alignment="CENTER" hgap="15" prefHeight="381.0" prefWidth="483.0" style="-fx-padding: 20; -fx-background-color: #f9fafb; -fx-background-radius: 10; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 0, 2);" vgap="15">
                 <columnConstraints>
-                    <ColumnConstraints percentWidth="30" />
-                    <ColumnConstraints percentWidth="70" />
+                    <ColumnConstraints />
+                    <ColumnConstraints percentWidth="30.0" />
+               <ColumnConstraints percentWidth="70.0" />
                 </columnConstraints>
                 <rowConstraints>
                     <RowConstraints vgrow="SOMETIMES" />
@@ -42,63 +54,97 @@
                     <RowConstraints vgrow="SOMETIMES" />
                     <RowConstraints vgrow="SOMETIMES" />
                     <RowConstraints vgrow="SOMETIMES" />
+               <RowConstraints vgrow="SOMETIMES" />
+               <RowConstraints vgrow="SOMETIMES" />
+               <RowConstraints vgrow="SOMETIMES" />
+               <RowConstraints vgrow="SOMETIMES" />
                 </rowConstraints>
 
                 <!-- Student ID -->
-                <Label text="Student ID:" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                <Label text="Student ID:" GridPane.columnIndex="1">
                     <font><Font name="System Bold" size="14.0" /></font>
                 </Label>
-                <TextField fx:id="txtStudentId" promptText="Enter Student ID" style="-fx-background-radius: 5;" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                <TextField fx:id="txtStudentId" promptText="Enter Student ID" style="-fx-background-radius: 5;" GridPane.columnIndex="2">
                     <tooltip><Tooltip text="Unique ID for the student" /></tooltip>
                 </TextField>
 
                 <!-- Name -->
-                <Label text="Name:" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                <Label text="First Name" GridPane.columnIndex="1" GridPane.rowIndex="1">
                     <font><Font name="System Bold" size="14.0" /></font>
                 </Label>
-                <TextField fx:id="txtName" promptText="Enter Full Name" style="-fx-background-radius: 5;" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                <TextField fx:id="txtName" promptText="Enter First Name" style="-fx-background-radius: 5;" GridPane.columnIndex="2" GridPane.rowIndex="1">
                     <tooltip><Tooltip text="Student's full name" /></tooltip>
                 </TextField>
 
                 <!-- Email -->
-                <Label text="Email:" GridPane.columnIndex="0" GridPane.rowIndex="2">
+                <Label text="Email:" GridPane.columnIndex="1" GridPane.rowIndex="3">
                     <font><Font name="System Bold" size="14.0" /></font>
                 </Label>
-                <TextField fx:id="txtEmail" promptText="Enter Email" style="-fx-background-radius: 5;" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                <TextField fx:id="txtEmail" promptText="Enter Email" style="-fx-background-radius: 5;" GridPane.columnIndex="2" GridPane.rowIndex="3">
                     <tooltip><Tooltip text="Student's email address" /></tooltip>
                 </TextField>
 
                 <!-- Phone -->
-                <Label text="Phone:" GridPane.columnIndex="0" GridPane.rowIndex="3">
+                <Label text="Phone:" GridPane.columnIndex="1" GridPane.rowIndex="4">
                     <font><Font name="System Bold" size="14.0" /></font>
                 </Label>
-                <TextField fx:id="txtPhone" promptText="Enter Phone Number" style="-fx-background-radius: 5;" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                <TextField fx:id="txtPhone" promptText="Enter Phone Number" style="-fx-background-radius: 5;" GridPane.columnIndex="2" GridPane.rowIndex="4">
                     <tooltip><Tooltip text="Student's contact number" /></tooltip>
                 </TextField>
 
                 <!-- Address -->
-                <Label text="Address:" GridPane.columnIndex="0" GridPane.rowIndex="4">
+                <Label text="Address:" GridPane.columnIndex="1" GridPane.rowIndex="5">
                     <font><Font name="System Bold" size="14.0" /></font>
                 </Label>
-                <TextField fx:id="txtAddress" promptText="Enter Address" style="-fx-background-radius: 5;" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                <TextField fx:id="txtAddress" promptText="Enter Address" style="-fx-background-radius: 5;" GridPane.columnIndex="2" GridPane.rowIndex="5">
                     <tooltip><Tooltip text="Student's address" /></tooltip>
                 </TextField>
-
-                <!-- Register Fee -->
-                <Label text="Register Fee:" GridPane.columnIndex="0" GridPane.rowIndex="5">
-                    <font><Font name="System Bold" size="14.0" /></font>
-                </Label>
-                <TextField fx:id="txtRegisterFee" promptText="Enter Fee" style="-fx-background-radius: 5;" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                <TextField fx:id="txtRegisterFee" promptText="Enter Course" style="-fx-background-radius: 5;" GridPane.columnIndex="2" GridPane.rowIndex="8">
                     <tooltip><Tooltip text="Registration fee amount" /></tooltip>
                 </TextField>
 
                 <!-- Registration Date -->
-                <Label text="Registration Date:" GridPane.columnIndex="0" GridPane.rowIndex="6">
+                <Label text="Registration Date:" GridPane.columnIndex="1" GridPane.rowIndex="7">
                     <font><Font name="System Bold" size="14.0" /></font>
                 </Label>
-                <DatePicker fx:id="dpRegistrationDate" promptText="Select Date" style="-fx-background-radius: 5;" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                <DatePicker fx:id="dpRegistrationDate" promptText="Select Date" style="-fx-background-radius: 5;" GridPane.columnIndex="2" GridPane.rowIndex="7">
                     <tooltip><Tooltip text="Date of registration" /></tooltip>
                 </DatePicker>
+            <Label text="Last Name" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtName1" promptText="Enter First Name" style="-fx-background-radius: 5;" GridPane.columnIndex="2" GridPane.rowIndex="2">
+               <tooltip>
+                  <Tooltip text="Student's full name" />
+               </tooltip>
+            </TextField>
+            <Label text="Courses" GridPane.columnIndex="1" GridPane.rowIndex="8">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label text="Lessons" GridPane.columnIndex="1" GridPane.rowIndex="9">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtRegisterFee1" promptText="Enter Lesson" style="-fx-background-radius: 5;" GridPane.columnIndex="2" GridPane.rowIndex="9">
+               <tooltip>
+                  <Tooltip text="Registration fee amount" />
+               </tooltip>
+            </TextField>
+            <Label text="Payments" GridPane.columnIndex="1" GridPane.rowIndex="10">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtRegisterFee11" promptText="Enter Payment" style="-fx-background-radius: 5;" GridPane.columnIndex="2" GridPane.rowIndex="10">
+               <tooltip>
+                  <Tooltip text="Registration fee amount" />
+               </tooltip>
+            </TextField>
             </GridPane>
 
             <!-- Placeholder for Image or Additional Content -->

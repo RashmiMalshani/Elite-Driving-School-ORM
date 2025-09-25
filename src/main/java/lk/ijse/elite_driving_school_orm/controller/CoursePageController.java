@@ -2,17 +2,12 @@ package lk.ijse.elite_driving_school_orm.controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.DatePicker;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 
 public class CoursePageController {
-
-    @FXML
-    private ComboBox<?> cmbPaymentMethod;
 
     @FXML
     private TableColumn<?, ?> colAmount;
@@ -30,9 +25,6 @@ public class CoursePageController {
     private TableColumn<?, ?> colStudentId;
 
     @FXML
-    private DatePicker dpPaymentDate;
-
-    @FXML
     private TableView<?> tblCourse;
 
     @FXML
@@ -42,7 +34,10 @@ public class CoursePageController {
     private TextField txtCourseId;
 
     @FXML
-    private TextField txtStudentId;
+    private TextField txtCourseId1;
+
+    @FXML
+    private TextField txtCourseId2;
 
     @FXML
     void handleClear(ActionEvent event) {

@@ -1,8 +1,7 @@
-package lk.ijse.elite_driving_school_orm.bo.custom;
+package lk.ijse.elite_driving_school_orm.bo;
 
 
-import lk.ijse.elite_driving_school_orm.bo.SuperBO;
-import lk.ijse.elite_driving_school_orm.bo.custom.Impl.StudentBOImpl;
+import lk.ijse.elite_driving_school_orm.bo.custom.Impl.*;
 
 public class BOFactory {
 
@@ -20,11 +19,11 @@ public class BOFactory {
 
     public enum BOTypes{
         STUDENT,
-//        COURSE,
-//        INSTRUCTOR,
-//        LESSON,
-//        PAYMENT,
-//        USER
+        COURSE,
+        INSTRUCTOR,
+        LESSON,
+        PAYMENT,
+        USER
     }
     public SuperBO getBO(BOTypes boType) {
         switch(boType){
