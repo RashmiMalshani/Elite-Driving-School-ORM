@@ -6,6 +6,7 @@ import lk.ijse.elite_driving_school_orm.dao.custom.UserDAO;
 import lk.ijse.elite_driving_school_orm.dto.UserDTO;
 import lk.ijse.elite_driving_school_orm.entity.User;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class UserBOImpl implements UserBO {
@@ -17,16 +18,26 @@ public class UserBOImpl implements UserBO {
 
     @Override
     public boolean updateuser(UserDTO t) {
-        return false;
+        return userDAO.save(new User(t.getUserId(),t.getUsername(),t.getPassword(),t.getRole()));
     }
 
     @Override
     public boolean deleteuser(int id) {
-        return false;
+        return userDAO.delete(id);
     }
 
     @Override
     public List<UserDTO> getAlluser() {
-        return List.of();
+        List<UserDTO> userDTOS = null;
+        try {
+            List<User> users = userDAO.getAll();
+            userDTOS = new ArrayList<>();
+            for (User t : users) {
+                userDTOS.add(new UserDTO(t.getUserId(),t.getUsername(),t.getPassword(),t.getRole()));
+            }
+            return userDTOS;
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 }

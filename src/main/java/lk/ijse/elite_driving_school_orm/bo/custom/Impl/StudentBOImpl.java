@@ -6,6 +6,7 @@ import lk.ijse.elite_driving_school_orm.dao.custom.StudentDAO;
 import lk.ijse.elite_driving_school_orm.dto.StudentDTO;
 import lk.ijse.elite_driving_school_orm.entity.Student;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class StudentBOImpl implements StudentBO {
@@ -27,6 +28,17 @@ public class StudentBOImpl implements StudentBO {
 
     @Override
     public List<StudentDTO> getAllstudent() {
-        return List.of();
+       List<StudentDTO> studentDTOS = null;
+       try {
+           List<Student> students = studentDAO.getAll();
+           studentDTOS = new ArrayList<>();
+           for (Student t : students) {
+               studentDTOS.add(new StudentDTO(t.getStudentId(), t.getFirstName(), t.getLastName(), t.getEmail(), t.getPhone(), t.getRegistrationDate(), t.getCourses(), t.getLessons(), t.getPayments()));
+               return studentDTOS;
+           }
+       } catch(Exception e){
+           throw new RuntimeException(e);
+       }
+       return studentDTOS;
     }
 }

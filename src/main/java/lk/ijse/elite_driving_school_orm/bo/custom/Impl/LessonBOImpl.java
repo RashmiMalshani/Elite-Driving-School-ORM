@@ -6,6 +6,7 @@ import lk.ijse.elite_driving_school_orm.dao.custom.LessonDAO;
 import lk.ijse.elite_driving_school_orm.dto.LessonDTO;
 import lk.ijse.elite_driving_school_orm.entity.Lesson;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class LessonBOImpl implements LessonBO {
@@ -27,6 +28,17 @@ public class LessonBOImpl implements LessonBO {
 
     @Override
     public List<LessonDTO> getAlllesson() {
-        return List.of();
+         List<LessonDTO> lessonDTOS = null;
+         try {
+            List<Lesson> lessons = lessonDAO.getAll();
+            lessonDTOS = new ArrayList<>();
+            for (Lesson t : lessons) {
+                lessonDTOS.add(new LessonDTO(t.getLessonId(), t.getStudent(), t.getCourse(), t.getInstructor(), t.getLessonDateTime()));
+                return lessonDTOS;
+            }
+        } catch(Exception e){
+            throw new RuntimeException(e);
+        }
+        return lessonDTOS;
     }
 }

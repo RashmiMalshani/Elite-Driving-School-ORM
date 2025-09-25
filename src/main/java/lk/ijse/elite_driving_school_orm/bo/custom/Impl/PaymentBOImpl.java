@@ -6,6 +6,7 @@ import lk.ijse.elite_driving_school_orm.dao.custom.PaymentDAO;
 import lk.ijse.elite_driving_school_orm.dto.PaymentDTO;
 import lk.ijse.elite_driving_school_orm.entity.Payment;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class PaymentBOImpl implements PaymentBO {
@@ -27,6 +28,17 @@ public class PaymentBOImpl implements PaymentBO {
 
     @Override
     public List<PaymentDTO> getAllpayment() {
-        return List.of();
+        List<PaymentDTO> paymentDTOS = null;
+        try {
+            List<Payment> payments = paymentDAO.getAll();
+            paymentDTOS = new ArrayList<>();
+            for (Payment t : payments) {
+                paymentDTOS.add(new PaymentDTO(t.getPaymentId(), t.getStudent(), t.getCourse(), t.getAmount(), t.getPaymentDate(), t.getStatus()));
+                return paymentDTOS;
+            }
+        } catch(Exception e){
+            throw new RuntimeException(e);
+        }
+        return paymentDTOS;
     }
 }
