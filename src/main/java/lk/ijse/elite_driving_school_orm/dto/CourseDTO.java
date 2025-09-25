@@ -6,6 +6,7 @@ import lk.ijse.elite_driving_school_orm.entity.*;
 import java.math.BigDecimal;
 import lombok.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -23,7 +24,9 @@ public class CourseDTO {
     private String duration;
     private BigDecimal fee;
 
-    private List<Student> studentList;
+    @Builder.Default
+    private List<Student> studentList = new ArrayList<>();
+
 
     private List<Lesson> lessonsList;
 
